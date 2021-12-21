@@ -4,8 +4,7 @@
     update_cache: yes
     cache_valid_time: 3600
 
-- name: be sure byobu is installed
+- name: update all packages to their latest version
   apt:
-    name: byobu
-    state: present
-  tags: terminal
+    name: "*"
+    state: latest
