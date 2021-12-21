@@ -1,9 +1,9 @@
 ---
 - name: update APT cache
-  apt:
+  ansible.builtin.apt:
     update_cache: yes
     cache_valid_time: 3600
 
 - name: upgrade the OS
-  apt:
+  ansible.builtin.apt:
     upgrade: yes

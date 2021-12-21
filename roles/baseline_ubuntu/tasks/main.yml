@@ -1,23 +1,23 @@
 ---
 - name: update APT cache
-  apt:
+  ansible.builtin.apt:
     update_cache: yes
     cache_valid_time: 3600
 
 - name: be sure byobu is installed
-  apt:
+  ansible.builtin.apt:
     name: byobu
     state: present
   tags: terminal
 
 - name: be sure curl is installed
-  apt:
+  ansible.builtin.apt:
     name: curl
     state: present
   tags: tooling
 
 - name: be sure ufw is installed
-  apt:
+  ansible.builtin.apt:
     name: ufw
     state: present
   tags: security
