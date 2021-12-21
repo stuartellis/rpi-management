@@ -29,4 +29,4 @@ To check that Ansible can successfully connect to nodes, use the *ping* module:
 
 To get the Ansible facts for nodes, use the *setup* module:
 
-    ansible -m setup -i inventory/hosts all > all.json
+    ansible -m setup -i inventory/hosts all > all.txt
