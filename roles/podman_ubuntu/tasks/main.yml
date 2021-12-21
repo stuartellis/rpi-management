@@ -1,0 +1,26 @@
+---
+
+- name: be sure gnupg2 is installed
+  ansible.builtin.apt:
+    name: gnupg2
+    state: present
+
+- name: add APT signing key
+  ansible.builtin.apt_key:
+    url: https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable/xUbuntu_20.04/Release.key
+    state: present
+
+- name: add Kubic project repository
+  ansible.builtin.apt_repository:
+    repo: deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /
+    state: present
+    filename: devel:kubic:libcontainers:stable
+
+- name: update APT cache
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: be sure podman is installed
+  ansible.builtin.apt:
+    name: podman
+    state: latest
