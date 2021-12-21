@@ -7,14 +7,14 @@
 
 - name: add APT signing key
   ansible.builtin.apt_key:
-    url: https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable/xUbuntu_20.04/Release.key
+    url: https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable/xUbuntu_{{ansible_distribution_version}}/Release.key
     state: present
 
 - name: add Kubic project repository
   ansible.builtin.apt_repository:
-    repo: deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /
+    repo: deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_{{ansible_distribution_version}}/ /
     state: present
-    filename: devel:kubic:libcontainers:stable
+    filename: devel-kubic-libcontainers-stable
 
 - name: update APT cache
   ansible.builtin.apt:
