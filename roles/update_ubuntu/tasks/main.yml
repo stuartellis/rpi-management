@@ -4,7 +4,6 @@
     update_cache: yes
     cache_valid_time: 3600
 
-- name: update all packages to their latest version
+- name: upgrade the OS
   apt:
-    name: "*"
-    state: latest
+    upgrade: yes
