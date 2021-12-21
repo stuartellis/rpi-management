@@ -9,3 +9,15 @@
     name: byobu
     state: present
   tags: terminal
+
+- name: be sure curl is installed
+  apt:
+    name: curl
+    state: present
+  tags: tooling
+
+- name: be sure ufw is installed
+  apt:
+    name: ufw
+    state: present
+  tags: security
