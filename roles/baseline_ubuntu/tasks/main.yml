@@ -4,15 +4,15 @@
     update_cache: yes
     cache_valid_time: 3600
 
-- name: be sure byobu is installed
-  ansible.builtin.apt:
-    name: byobu
-    state: present
-  tags: terminal
-
 - name: be sure curl is installed
   ansible.builtin.apt:
     name: curl
+    state: present
+  tags: tooling
+
+- name: be sure tmux is installed
+  ansible.builtin.apt:
+    name: tmux
     state: present
   tags: tooling
 
