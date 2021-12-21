@@ -1,0 +1,6 @@
+---
+- name: be sure byobu is installed
+  apt:
+    name: byobu
+    state: present
+  tags: terminal

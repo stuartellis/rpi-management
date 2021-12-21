@@ -1,0 +1,7 @@
+---
+- name: Baseline Ubuntu
+  hosts: all
+  become: true
+  roles:
+    - role: baseline_ubuntu
+   

@@ -1,1 +1,2 @@
+[containerhosts]
 192.168.1.253 ansible_user=ansibler
