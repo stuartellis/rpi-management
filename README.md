@@ -19,6 +19,7 @@ To run a playbook:
 ### Playbooks
 
 - baseline_ubuntu.yml - Standard setup for Ubuntu
+- podman_ubuntu.yml - Add Podman to Ubuntu
 - update_ubuntu.yml - Apply OS updates
 
 ## Diagnostics
