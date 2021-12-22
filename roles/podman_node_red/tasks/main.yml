@@ -1,0 +1,11 @@
+---
+
+- name: set Docker Hub credentials
+  containers.podman.podman_login:
+    username: "{{ docker_hub_username }}"
+    password: "{{ docker_hub_token }}"
+    registry: docker.io
+
+- name: pull the image
+  containers.podman.podman_image:
+    name: "{{ docker_hub_image }}"

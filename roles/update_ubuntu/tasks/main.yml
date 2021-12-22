@@ -6,4 +6,4 @@
 
 - name: upgrade the OS
   ansible.builtin.apt:
-    upgrade: yes
+    upgrade: dist

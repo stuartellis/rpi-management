@@ -1,6 +1,6 @@
 ---
 - name: Podman on Ubuntu
   hosts: containerhosts
-  become: true
+  become: yes
   roles:
-    - role: podman_ubuntu
+    - role: podman_ubuntu_host
