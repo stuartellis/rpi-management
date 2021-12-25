@@ -9,21 +9,23 @@ Install Ansible:
     pip3 --user pipx
     pipx install ansible-core
 
-Install the [containers.podman](https://docs.ansible.com/ansible/latest/collections/containers/podman/index.html) collection for Ansible:
+Install extra Ansible collections: 
 
+    ansible-galaxy collection install community.general
     ansible-galaxy collection install containers.podman
-
-Install the [jnv.unattended-upgrades](https://galaxy.ansible.com/jnv/unattended-upgrades) collection:
-
     ansible-galaxy install jnv.unattended-upgrades
+
+- [community.general](https://docs.ansible.com/ansible/latest/collections/community/general/index.html) includes *ufw*
+- [containers.podman](https://docs.ansible.com/ansible/latest/collections/containers/podman/index.html) supports Podman
+- [jnv.unattended-upgrades](https://galaxy.ansible.com/jnv/unattended-upgrades) for automatic updates
 
 ## Running Playbooks
 
-Always use *syntax-check* to validate a playboks before you run it:
+Always use *syntax-check* to validate a playbook before you run it:
 
     ansible-playbook --syntax-check -i inventory/hosts baseline_ubuntu.yml
 
-To carry a dry-run of a playbook, use *--check* to enable *check mode*:
+To carry out a dry-run of a playbook, use *--check* to enable *check mode*:
 
     ansible-playbook --check -i inventory/hosts update_ubuntu.yml
 
@@ -47,3 +49,9 @@ To check that Ansible can successfully connect to nodes, use the *ping* module:
 To get the Ansible facts for nodes, use the *setup* module:
 
     ansible -m setup -i inventory/hosts all > all.txt
+
+## Resources
+
+- [Ansible Playbook for Raspberry Pi, by Glenn K. Lockwood](https://github.com/glennklockwood/rpi-ansible)
+- [Podman on Ubuntu](https://www.atlantic.net/dedicated-server-hosting/how-to-install-and-use-podman-on-ubuntu-20-04/)
+- [Automate Podman with Ansible](https://www.redhat.com/sysadmin/automate-podman-ansible)
