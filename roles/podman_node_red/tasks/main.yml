@@ -1,11 +1,35 @@
 ---
-
 - name: set Docker Hub credentials
   containers.podman.podman_login:
     username: "{{ docker_hub_username }}"
     password: "{{ docker_hub_token }}"
     registry: docker.io
 
-- name: pull the image
+- name: pull the Node-RED image
   containers.podman.podman_image:
     name: "{{ docker_hub_image }}"
+
+- name: create a data volume
+  containers.podman.podman_volume:
+    state: present
+    name: "{{ container_name }}-data"
+
+- name: define a Node-RED container
+  containers.podman.podman_container:
+    name: "{{ container_name }}"
+    image: "{{ docker_hub_image }}"
+    state: present
+    publish:
+      - "1880:1880"
+    volume:
+      - "{{ container_name }}-data:/data"
+    generate_systemd:
+      path: /etc/systemd/system
+      restart_policy: always
+      time: 360
+
+- name: enable systemd service for container
+  ansible.builtin.systemd:
+    name: container-{{ container_name }}.service
+    state: started
+    enabled: yes
