@@ -13,6 +13,10 @@ Install the [containers.podman](https://docs.ansible.com/ansible/latest/collecti
 
     ansible-galaxy collection install containers.podman
 
+Install the [jnv.unattended-upgrades](https://galaxy.ansible.com/jnv/unattended-upgrades) collection:
+
+    ansible-galaxy install jnv.unattended-upgrades
+
 ## Running Playbooks
 
 Always use *syntax-check* to validate a playboks before you run it:

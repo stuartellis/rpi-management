@@ -4,4 +4,12 @@
   become: yes
   roles:
     - role: baseline_ubuntu
-   
+
+    - role: jnv.unattended-upgrades
+      unattended_automatic_reboot_time: 22:00
+      unattended_update_days: Sat
+      unattended_ignore_apps_require_restart: true
+      unattended_origins_patterns:
+        - "origin=Ubuntu,archive=${distro_codename}-security"
+        - "o=Ubuntu,a=${distro_codename}"
+        - "o=Ubuntu,a=${distro_codename}-updates"
