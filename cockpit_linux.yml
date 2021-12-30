@@ -1,0 +1,11 @@
+---
+- name: Cockpit
+  hosts: containerhosts
+  become: yes
+  roles:
+    - linux-system-roles.cockpit
+  vars:
+    cockpit_packages:
+      - cockpit-pcp
+      - cockpit-system
+      - cockpit-ws

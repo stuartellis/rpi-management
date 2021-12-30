@@ -10,6 +10,13 @@
     state: present
   tags: tooling
 
+# Needed for Cockpit monitoring
+- name: be sure pcp is installed
+  ansible.builtin.apt:
+    name: pcp
+    state: present
+  tags: tooling
+
 - name: be sure tmux is installed
   ansible.builtin.apt:
     name: tmux

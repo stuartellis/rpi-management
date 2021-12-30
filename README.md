@@ -14,10 +14,12 @@ Install extra Ansible collections:
     ansible-galaxy collection install community.general
     ansible-galaxy collection install containers.podman
     ansible-galaxy install jnv.unattended-upgrades
+    ansible-galaxy install linux-system-roles.cockpit
 
-- [community.general](https://docs.ansible.com/ansible/latest/collections/community/general/index.html) includes *ufw*
+- [community.general](https://docs.ansible.com/ansible/latest/collections/community/general/index.html) includes [ufw](https://help.ubuntu.com/community/UFW).
 - [containers.podman](https://docs.ansible.com/ansible/latest/collections/containers/podman/index.html) supports Podman
 - [jnv.unattended-upgrades](https://galaxy.ansible.com/jnv/unattended-upgrades) for automatic updates
+- [linux-system-roles.cockpit](https://galaxy.ansible.com/linux-system-roles/cockpit) for [Cockpit](https://cockpit-project.org/)
 
 ## Running Playbooks
 
@@ -36,6 +38,7 @@ To run a playbook:
 ### Playbooks
 
 - baseline_ubuntu.yml - Standard setup for Ubuntu
+- cockpit_linux.yml - Cockpit on Linux
 - podman_node_red.yml - Run Node-RED container
 - podman_ubuntu_host.yml - Add Podman to Ubuntu
 - update_ubuntu.yml - Apply OS updates

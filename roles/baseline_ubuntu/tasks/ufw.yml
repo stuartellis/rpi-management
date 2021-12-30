@@ -8,6 +8,15 @@
   tags:
     - ufw
 
+- name: allow Cockpit through UFW
+  community.general.ufw:
+    rule: allow
+    port: 9090
+    proto: tcp
+    log: yes
+  tags:
+    - ufw
+
 - name: allow mDNS through UFW
   community.general.ufw:
     rule: allow
