@@ -10,7 +10,7 @@ These playbooks currently support Ubuntu 20.04 LTS (64-bit) on Raspberry Pi 4 de
 - **update_ubuntu.yml** - Apply operating system updates
 - **podman_node_red.yml** - Run a [Node-RED](https://nodered.org/) container with Podman
 
-## Setup of Controller
+## Setting Up Ansible
 
 To set up Ansible on the computer that will manage the Raspberry Pi devices:
 
@@ -59,11 +59,11 @@ To run a playbook:
 
 ## Diagnostics
 
-To check that Ansible can successfully connect to nodes, use the *ping* module:
+To check that Ansible can successfully connect to the devices in the inventory, use the *ping* module:
 
     ansible -m ping -i inventory/hosts all
 
-To get the Ansible facts for nodes, use the *setup* module:
+To get the Ansible facts for the devices, use the *setup* module:
 
     ansible -m setup -i inventory/hosts all > all.txt
 
