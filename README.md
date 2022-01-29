@@ -12,7 +12,15 @@ These playbooks currently support Ubuntu 20.04 LTS (64-bit) on Raspberry Pi 4 de
 
 ## Setup of Controller
 
-Use these commands to set up Ansible on the computer that will manage the Raspberry Pi devices.
+To set up Ansible on the computer that will manage the Raspberry Pi devices:
+
+1. Clone this Git repository to the computer.
+2. Install Ansible on the computer
+3. Edit the inventory to list your Raspberry Pi devices
+
+You can then run the Ansible playbooks.
+
+### Installing Ansible
 
 Install Ansible:
 
@@ -30,6 +38,10 @@ Install extra Ansible collections:
 - [containers.podman](https://docs.ansible.com/ansible/latest/collections/containers/podman/index.html) supports Podman
 - [jnv.unattended-upgrades](https://galaxy.ansible.com/jnv/unattended-upgrades) for automatic updates
 - [linux-system-roles.cockpit](https://galaxy.ansible.com/linux-system-roles/cockpit) for [Cockpit](https://cockpit-project.org/)
+
+### Update the Ansible Inventory
+
+Edit the file *inventory/hosts*. For each Raspberry Pi device, list the IP address of the device and the name of your user account on that device.
 
 ## Running Playbooks
 
