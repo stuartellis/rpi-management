@@ -1,8 +1,18 @@
 # Raspberry Pi Management
 
-This currently supports Ubuntu 20.04 LTS (64-bit) on Raspberry Pi 4 devices.
+A set of Ansible playbooks to configure a Raspberry Pi. These use [Podman](https://podman.io/) for running containers on the Pi.
+
+These playbooks currently support Ubuntu 20.04 LTS (64-bit) on Raspberry Pi 4 devices.
+
+- **baseline_ubuntu.yml** - Standard setup for Ubuntu
+- **cockpit_linux.yml** - [Cockpit](https://cockpit-project.org/) Web interface for administration
+- **podman_ubuntu_host.yml** - Add [Podman](https://podman.io/) to Ubuntu
+- **update_ubuntu.yml** - Apply operating system updates
+- **podman_node_red.yml** - Run a [Node-RED](https://nodered.org/) container with Podman
 
 ## Setup of Controller
+
+Use these commands to set up Ansible on the computer that will manage the Raspberry Pi devices.
 
 Install Ansible:
 
@@ -16,7 +26,7 @@ Install extra Ansible collections:
     ansible-galaxy install jnv.unattended-upgrades
     ansible-galaxy install linux-system-roles.cockpit
 
-- [community.general](https://docs.ansible.com/ansible/latest/collections/community/general/index.html) includes [ufw](https://help.ubuntu.com/community/UFW).
+- [community.general](https://docs.ansible.com/ansible/latest/collections/community/general/index.html) includes support for the [ufw](https://help.ubuntu.com/community/UFW) firewall.
 - [containers.podman](https://docs.ansible.com/ansible/latest/collections/containers/podman/index.html) supports Podman
 - [jnv.unattended-upgrades](https://galaxy.ansible.com/jnv/unattended-upgrades) for automatic updates
 - [linux-system-roles.cockpit](https://galaxy.ansible.com/linux-system-roles/cockpit) for [Cockpit](https://cockpit-project.org/)
@@ -34,14 +44,6 @@ To carry out a dry-run of a playbook, use *--check* to enable *check mode*:
 To run a playbook:
 
     ansible-playbook -i inventory/hosts update_ubuntu.yml
-
-### Playbooks
-
-- baseline_ubuntu.yml - Standard setup for Ubuntu
-- cockpit_linux.yml - Cockpit on Linux
-- podman_node_red.yml - Run Node-RED container
-- podman_ubuntu_host.yml - Add Podman to Ubuntu
-- update_ubuntu.yml - Apply OS updates
 
 ## Diagnostics
 
