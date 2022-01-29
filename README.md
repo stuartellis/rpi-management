@@ -39,7 +39,7 @@ Install extra Ansible collections:
 - [jnv.unattended-upgrades](https://galaxy.ansible.com/jnv/unattended-upgrades) for automatic updates
 - [linux-system-roles.cockpit](https://galaxy.ansible.com/linux-system-roles/cockpit) for [Cockpit](https://cockpit-project.org/)
 
-### Update the Ansible Inventory
+### Updating the Ansible Inventory
 
 Edit the file *inventory/hosts*. For each Raspberry Pi device, list the IP address of the device and the name of your user account on that device.
 
