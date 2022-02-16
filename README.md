@@ -26,18 +26,7 @@ Install Ansible:
 
     pip3 --user pipx
     pipx install ansible-core
-
-Install extra Ansible collections: 
-
-    ansible-galaxy collection install community.general
-    ansible-galaxy collection install containers.podman
-    ansible-galaxy install jnv.unattended-upgrades
-    ansible-galaxy install linux-system-roles.cockpit
-
-- [community.general](https://docs.ansible.com/ansible/latest/collections/community/general/index.html) includes support for the [ufw](https://help.ubuntu.com/community/UFW) firewall.
-- [containers.podman](https://docs.ansible.com/ansible/latest/collections/containers/podman/index.html) supports Podman
-- [jnv.unattended-upgrades](https://galaxy.ansible.com/jnv/unattended-upgrades) for automatic updates
-- [linux-system-roles.cockpit](https://galaxy.ansible.com/linux-system-roles/cockpit) for [Cockpit](https://cockpit-project.org/)
+    ansible-galaxy install -r requirements.yml
 
 ### Updating the Ansible Inventory
 

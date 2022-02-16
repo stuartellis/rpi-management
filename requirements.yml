@@ -1,0 +1,11 @@
+collections:
+  - name: community.general
+    version: "4.4.0"
+  - name: containers.podman
+    version: "1.9.1"
+
+roles:
+  - name: jnv.unattended-upgrades
+    version: "v1.12.1"
+  - name: linux-system-roles.cockpit
+    version: "1.2.2"
