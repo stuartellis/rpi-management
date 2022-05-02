@@ -28,3 +28,9 @@
     name: ufw
     state: present
   tags: security
+
+- name: be sure fail2ban is installed
+  ansible.builtin.apt:
+    name: fail2ban
+    state: present
+  tags: security
