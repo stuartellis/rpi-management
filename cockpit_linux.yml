@@ -7,5 +7,6 @@
   vars:
     cockpit_packages:
       - cockpit-pcp
+      - cockpit-podman
       - cockpit-system
       - cockpit-ws
