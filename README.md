@@ -2,7 +2,7 @@
 
 A set of Ansible playbooks to configure a Raspberry Pi. These use [Podman](https://podman.io/) for running containers on the Pi.
 
-These playbooks currently support Ubuntu 20.04 LTS (64-bit) on Raspberry Pi 4 devices.
+These playbooks currently support Ubuntu 22.04 LTS (64-bit) on Raspberry Pi 4 devices.
 
 - **baseline_ubuntu.yml** - Standard setup for Ubuntu
 - **cockpit_linux.yml** - [Cockpit](https://cockpit-project.org/) Web interface for administration
@@ -24,7 +24,7 @@ You can then run the Ansible playbooks.
 
 Install Ansible:
 
-    pip3 --user pipx
+    pip3 install --user pipx
     pipx install ansible-core
     ansible-galaxy install -r requirements.yml
 
