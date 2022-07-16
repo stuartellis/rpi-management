@@ -3,7 +3,12 @@
   ansible.builtin.apt:
     update_cache: yes
 
-- name: be sure podman is installed
+- name: ensure Podman is installed
   ansible.builtin.apt:
     name: podman
+    state: latest
+
+- name: ensure podman-docker is installed
+  ansible.builtin.apt:
+    name: podman-docker
     state: latest
