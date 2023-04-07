@@ -1,6 +1,6 @@
 ---
 - name: Update Ubuntu
   hosts: all
-  become: yes
+  become: true
   roles:
     - role: update_ubuntu

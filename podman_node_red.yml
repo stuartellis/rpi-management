@@ -1,7 +1,7 @@
 ---
 - name: Node-RED
   hosts: containerhosts
-  become: yes
+  become: true
   vars:
     container_name: nodered-0010
     docker_hub_username: "{{ lookup('env', 'DOCKER_HUB_USERNAME') }}"
